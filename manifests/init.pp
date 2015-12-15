@@ -40,6 +40,12 @@ class motd (
         line   => 'session    optional     pam_motd.so  motd=/run/motd.dynamic noupdate',
       }
     }
+  } elsif $::kernel == 'FreeBSD' {
+    file { '/etc/motd':
+      ensure  => file,
+      backup  => false,
+      content => $motd_content,
+    }
   } elsif $::kernel == 'windows' {
     registry_value { 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\policies\system\legalnoticecaption':
       ensure => present,
