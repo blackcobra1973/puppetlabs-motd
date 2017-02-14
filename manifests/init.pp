@@ -94,6 +94,12 @@ class motd (
         line   => $_line_to_remove,
       }
     }
+  } elsif $::kernel == 'FreeBSD' {
+    file { '/etc/motd':
+      ensure  => file,
+      backup  => false,
+      content => $motd_content,
+    }
   } elsif $::kernel == 'windows' {
     registry_value { 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\policies\system\legalnoticecaption':
       ensure => present,

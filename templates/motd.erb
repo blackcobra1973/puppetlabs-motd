@@ -1,5 +1,12 @@
-The operating system is <%= @operatingsystem %>
-The free memory is <%= @memoryfree %>
+
+      ===================================================================
+        Hostname:       <% if @fqdn %><%= @fqdn %><% else %><%= @hostname %><% end %>
 <%- if @domain -%>
-The domain is <%= @domain %>
+        Domain:         <%= @domain %>
 <%- end -%>
+        OS:             <%= @operatingsystem %>
+        OS Version:     <%= @operatingsystemrelease %>
+        CPUs:           <%= @processorcount %>
+        Memory:         <%= @memorysize %>
+      ===================================================================
+
