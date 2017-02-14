@@ -1,12 +1,12 @@
 
       ===================================================================
-        Hostname:       <% if @fqdn %><%= fqdn %><% else %><%= hostname %><% end %>
+        Hostname:       <% if @fqdn %><%= @fqdn %><% else %><%= @hostname %><% end %>
 <%- if @domain -%>
-        Domain:         <%= domain %>
+        Domain:         <%= @domain %>
 <%- end -%>
-        OS:             <%= operatingsystem %>
-        OS Version:     <%= operatingsystemrelease %>
-        CPUs:           <%= processorcount %>
-        Memory:         <%= memorysize %>
+        OS:             <%= @operatingsystem %>
+        OS Version:     <%= @operatingsystemrelease %>
+        CPUs:           <%= @processorcount %>
+        Memory:         <%= @memorysize %>
       ===================================================================
 
