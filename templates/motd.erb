@@ -4,8 +4,8 @@
 <%- if @domain -%>
         Domain:         <%= @domain %>
 <%- end -%>
-        OS:             <%= @operatingsystem %>
-        OS Version:     <%= @operatingsystemrelease %>
+        OS + Version:   <%= @operatingsystem %> <%= @operatingsystemrelease %>
+        Kernel Version: <%= @kernelrelease %>
         CPUs:           <%= @processorcount %>
         Memory:         <%= @memorysize %>
       ===================================================================
