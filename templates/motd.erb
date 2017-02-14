@@ -4,8 +4,11 @@
 <%- if @domain -%>
         Domain:         <%= @domain %>
 <%- end -%>
-        OS + Version:   <%= @operatingsystem %> <%= @operatingsystemrelease %>
+        OS:             <%= @operatingsystem %>
+        OS Version:     <%= @operatingsystemrelease %>
+<% if @osfamily != 'FreeBSD'-%>
         Kernel Version: <%= @kernelrelease %>
+<% end -%>
         CPUs:           <%= @processorcount %>
         Memory:         <%= @memorysize %>
       ===================================================================
