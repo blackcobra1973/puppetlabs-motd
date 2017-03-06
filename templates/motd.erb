@@ -1,6 +1,11 @@
 
       ===================================================================
         Hostname:       <% if @fqdn %><%= @fqdn %><% else %><%= @hostname %><% end %>
+<%- if @server_role -%>
+      ===================================================================
+        Server Role:    <%= @server_role %>
+<%- end -%>
+      ===================================================================
 <%- if @domain -%>
         Domain:         <%= @domain %>
 <%- end -%>
@@ -9,6 +14,7 @@
 <% if @osfamily != 'FreeBSD'-%>
         Kernel Version: <%= @kernelrelease %>
 <% end -%>
+      ===================================================================
         CPUs:           <%= @processorcount %>
         Memory:         <%= @memorysize %>
         Network:
