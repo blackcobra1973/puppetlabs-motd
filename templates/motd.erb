@@ -1,29 +1,27 @@
 
       ===================================================================
-        Hostname:       <% if @fqdn %><%= fqdn %><% else %><%= hostname %><% end %>
+        Hostname:       <% if @fqdn %><%= @fqdn %><% else %><%= @hostname %><% end %>
 <%- if @domain -%>
-        Domain:         <%= domain %>
+        Domain:         <%= @domain %>
 <%- end -%>
-        OS:             <%= operatingsystem %>
-        OS Version:     <%= operatingsystemrelease %>
 <%- if @server_role -%>
       ===================================================================
-        Server Role:    <%= server_role %>
+        Server Role:    <%= @server_role %>
 <%- end -%>
       ===================================================================
-        OS:             <%= operatingsystem %>
-        OS Version:     <%= operatingsystemrelease %>
+        OS:             <%= @operatingsystem %>
+        OS Version:     <%= @operatingsystemrelease %>
 <% if @osfamily != 'FreeBSD'-%>
-        Kernel Version: <%= kernelrelease %>
-        Kernel Arch:    <%= architecture %>
+        Kernel Version: <%= @kernelrelease %>
+        Kernel Arch:    <%= @architecture %>
 <% end -%>
       ===================================================================
-        CPU Model:      <%= cpu_model %>
-        CPUs:           <%= processorcount %>
-        Memory:         <%= memorysize %>
-        Memory Free:    <%= memoryfree %>
+        CPU Model:      <%= @cpu_model %>
+        CPUs:           <%= @processorcount %>
+        Memory:         <%= @memorysize %>
+        Memory Free:    <%= @memoryfree %>
         Network:
-          IPv4 Address: <%= ipaddress %>
-          IPv6 Address: <%= ipaddress6 %>
+          IPv4 Address: <%= @ipaddress %>
+          IPv6 Address: <%= @ipaddress6 %>
       ===================================================================
 
