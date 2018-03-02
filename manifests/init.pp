@@ -56,26 +56,32 @@ class motd (
     $_issue_net_content = false
   }
 
-  if $::kernel == 'Linux' {
+  File {
+    mode => '0644',
+  }
+
+  if ($::kernel == 'Linux') or ($::kernel == 'SunOS') or ($::kernel == 'FreeBSD') {
     file { '/etc/motd':
       ensure  => file,
       backup  => false,
       content => $motd_content,
     }
 
-    if $_issue_content {
-      file { '/etc/issue':
-        ensure  => file,
-        backup  => false,
-        content => $_issue_content,
+    if $::kernel != 'FreeBSD' {
+      if $_issue_content {
+        file { '/etc/issue':
+          ensure  => file,
+          backup  => false,
+          content => $_issue_content,
+        }
       }
-    }
 
-    if $_issue_net_content {
-      file { '/etc/issue.net':
-        ensure  => file,
-        backup  => false,
-        content => $_issue_net_content,
+      if $_issue_net_content {
+        file { '/etc/issue.net':
+          ensure  => file,
+          backup  => false,
+          content => $_issue_net_content,
+        }
       }
     }
 
