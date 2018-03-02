@@ -6,10 +6,18 @@
 <%- end -%>
         OS:             <%= operatingsystem %>
         OS Version:     <%= operatingsystemrelease %>
+<%- if @server_role -%>
+      ===================================================================
+        Server Role:    <%= server_role %>
+<%- end -%>
+      ===================================================================
+        OS:             <%= operatingsystem %>
+        OS Version:     <%= operatingsystemrelease %>
 <% if @osfamily != 'FreeBSD'-%>
         Kernel Version: <%= kernelrelease %>
         Kernel Arch:    <%= architecture %>
 <% end -%>
+      ===================================================================
         CPU Model:      <%= cpu_model %>
         CPUs:           <%= processorcount %>
         Memory:         <%= memorysize %>

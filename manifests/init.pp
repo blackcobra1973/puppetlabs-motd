@@ -21,6 +21,7 @@ class motd (
   $issue_content = undef,
   $issue_net_template = undef,
   $issue_net_content = undef,
+  $server_role = undef,
 ) {
 
   if $template {
